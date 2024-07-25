@@ -9,9 +9,7 @@ export class CarsService {
 
     private cars: Car[] = [
 
-        { id: uuid(), brand: 'BMW', model:'M3' },
-        { id: uuid(), brand: 'Audi', model: 'TT' },
-        { id: uuid(), brand: 'Mercedes', model: 'CLI' },
+        // { id: uuid(), brand: 'BMW', model:'M3' },
         
     ]
 
@@ -68,6 +66,10 @@ export class CarsService {
     delete( id:string ) {
         const carDB = this.findOneById(id);
         this.cars = this.cars.filter(car => car.id !== id);
+    }
+
+    fillCarsWithSeedData( cars: Car[] ) {
+        this.cars = cars;
     }
 
 }
